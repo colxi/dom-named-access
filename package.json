@@ -1,0 +1,23 @@
+{
+  "name": "dom-named-access",
+  "version": "1.0.4",
+  "homepage": "https://github.com/colxi/dom-named-access",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/colxi/dom-named-access.git"
+  },
+  "keywords": [
+    "named access",
+    "dom id",
+    "element id",
+    "dom",
+    "getElementById"
+  ],
+  "description": "Safe and fast access to named elements in DOM document.",
+  "main": "dom-named-access.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT",
+  "author": "colxi"
+}

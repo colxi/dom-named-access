@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <script type="module">
+            import {DOM} from '../src/dom-named-access.js';
+
+            DOM.id.myFirstDiv.removeAttribute('id')
+            document.querySelector('[unnamedDiv]').id= "myForthDiv";
+
+            DOM.id.mySecondDiv.innerHTML= `
+                <div>
+                    <span id="a">a</span>
+                    <span id="b">b</span>
+                    <span id="c">c</span>
+                </div>
+            `;
+
+            DOM.id.mySecondDiv.innerHTML= `
+                <div>
+                    <span id="d">a</span>
+                    <span id="e">b</span>
+                    <span id="f">c</span>
+                </div>
+            `;
+
+            DOM.id.mySecondDiv.id = 'myRenamedDiv';
+
+            DOM.id.myThirdDiv.remove();
+
+            function test(msg, result){
+                if(result) console.log('[TEST] :', msg, 'OK!');
+                else console.error('[TEST] :', msg, 'ERROR');
+            }
+            setTimeout( ()=>{
+                test( 'Has length (5) :' ,Object.keys(DOM.id).length === 5)
+                test( 'Has member (#myRenamedDiv) :' ,DOM.id.hasOwnProperty('myRenamedDiv') );
+                test( 'Has member (#myForthDiv) :' ,DOM.id.hasOwnProperty('myForthDiv') );
+                test( 'Has member (#d) :' ,DOM.id.hasOwnProperty('d') );
+                test( 'Has member (#e) :' ,DOM.id.hasOwnProperty('e') );
+                test( 'Has member (#f) :' ,DOM.id.hasOwnProperty('f') );
+            },500);
+
+        </script>
+    </head>
+    <body>
+        <div id="myFirstDiv">First</div>
+        <div id="mySecondDiv">Second</div>
+        <div id="myThirdDiv">Third</div>
+        <div unnamedDiv>Unnamed</div>
+    </body>
+</html>
