@@ -1,8 +1,14 @@
+<!doctype html>
 <html>
     <head>
         <script type="module">
             import {DOM} from '../src/dom-named-access.js';
 
+            // make DOM global , for debugging purposes
+            window.DOM = DOM;
+
+            // perform some changes in the DOM elements ids, 
+            // to observe the library behaviour
             DOM.id.myFirstDiv.removeAttribute('id')
             document.querySelector('[unnamedDiv]').id= "myForthDiv";
 
@@ -26,10 +32,12 @@
 
             DOM.id.myThirdDiv.remove();
 
+            // CHECK RESULTS!!!
             function test(msg, result){
                 if(result) console.log('[TEST] :', msg, 'OK!');
                 else console.error('[TEST] :', msg, 'ERROR');
             }
+
             setTimeout( ()=>{
                 test( 'Has length (5) :' ,Object.keys(DOM.id).length === 5)
                 test( 'Has member (#myRenamedDiv) :' ,DOM.id.hasOwnProperty('myRenamedDiv') );

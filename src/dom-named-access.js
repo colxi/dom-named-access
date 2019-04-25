@@ -100,10 +100,16 @@ const _OBSERVER_ = new MutationObserver( mutations=>{
 const DOM = {
     // DOM.id : Live Collection of ids available in the DOM
     id : {},
-    // DOM.head : Shortcut to the document.head object
+    // Reference to the doctype element
+    doctype : document.doctype,
+    // DOM.head : Reference to the document.head object
     head : document.head,
-    // DOM.body : Shortcut to the document.body object
-    body : document.body
+    // DOM.body : Reference to the document.body object
+    body : document.body,
+    // DOM.html : Reference to the html element (top node)
+    html : document.querySelector('html'),
+    // DOM[:root] : Reference to the DOM top element (whatever it is)
+    ':root' : document.documentElement
 };
 
 

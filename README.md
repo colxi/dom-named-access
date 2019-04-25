@@ -61,9 +61,15 @@ The DOM object provides the main public elements collection  :
 
 Two handful DOM references :
 
-`DOM.body` : Reference to document.body
+`DOM.doctype` :  Reference to the doctype element
+
+`DOM.html` : Reference to the html element (top element) 
 
 `DOM.head` : Reference to document.head
+
+`DOM.body` : Reference to document.body
+
+`DOM[':root']` : Special Reference to the DOM root element (whatever it is)
 
 And some internal/configuration properties and methods :
 
