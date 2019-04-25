@@ -14,7 +14,7 @@
     "getElementById"
   ],
   "description": "Safe and fast access to named elements in DOM document.",
-  "main": "dom-named-access.js",
+  "main": "./src/dom-named-access.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
